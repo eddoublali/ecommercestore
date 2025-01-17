@@ -1,0 +1,22 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Product 1",
+        "description": "Description of Product 1",
+        "price": 29.99,
+        "image": "https://th.bing.com/th/id/R.288fc82f3d116b442938c5d5a42cb15c?rik=NvB%2bv0H2JLxmaw&pid=ImgRaw&r=0"
+      },
+      {
+        "id":2,
+        "name": "Product 2",
+        "description": "Description of Product 2",
+        "price": 49.99,
+        "image": "https://th.bing.com/th/id/R.288fc82f3d116b442938c5d5a42cb15c?rik=NvB%2bv0H2JLxmaw&pid=ImgRaw&r=0"
+      }
+    
+    ],
+    "cart": {
+    }
+  }
+  
