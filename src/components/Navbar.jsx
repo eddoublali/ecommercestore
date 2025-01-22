@@ -46,13 +46,13 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
-            Hedraftech
+          <Link to="/" className="btn btn-ghost text-xl font-bold ">
+          Parfums
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li >
               <Link to="/">Home</Link>
             </li>
             <li>

@@ -9,6 +9,7 @@ import {
   selectCartTotalAmount,
   selectCartTotalQuantity,
 } from "../features/cardSlice";
+import { Link } from "react-router";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -87,6 +88,11 @@ const Cart = () => {
               className="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700 transition"
             >
               Vider le panier
+            </button>
+            <button
+              className="bg-black text-white py-2 px-6 rounded-lg  transition"
+            >
+             <Link to="/check-out"> Check-Out</Link>
             </button>
             <div className="text-right mt-4 md:mt-0">
               <h4 className="text-lg">Nombre darticles: {totalQuantity}</h4>

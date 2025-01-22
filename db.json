@@ -5,14 +5,62 @@
         "name": "Product 1",
         "description": "Description of Product 1",
         "price": 29.99,
-        "image": "https://th.bing.com/th/id/R.288fc82f3d116b442938c5d5a42cb15c?rik=NvB%2bv0H2JLxmaw&pid=ImgRaw&r=0"
+        "image": "./src/assets/1.webp"
       },
       {
         "id":2,
         "name": "Product 2",
         "description": "Description of Product 2",
+        "price": 69.99,
+        "image": "./src/assets/2.jpg"
+      }
+      ,
+      {
+        "id":3,
+        "name": "Product 3",
+        "description": "Description of Product 2",
+        "price": 59.99,
+        "image": "./src/assets/one.jpg"
+      }
+      ,
+      {
+        "id":4,
+        "name": "Product 4",
+        "description": "Description of Product 2",
+        "price": 149.99,
+        "image": "./src/assets/1.webp"
+      }
+      ,
+      {
+        "id":5,
+        "name": "Product 5",
+        "description": "Description of Product 2",
+        "price": 29.99,
+        "image": "./src/assets/2.jpg"
+      }
+      ,
+      {
+        "id":6,
+        "name": "Product 6",
+        "description": "Description of Product 2",
+        "price": 109.9,
+        "image": "./src/assets/1.webp"
+      }
+      ,
+      {
+        "id":7,
+        "name": "Product 7",
+        "description": "Description of Product 2",
+        "price": 39.99,
+        "image": "./src/assets/2.jpg"
+      }
+      ,
+      {
+        "id":8,
+        "name": "Product 8",
+        "description": "Description of Product 2",
         "price": 49.99,
-        "image": "https://th.bing.com/th/id/R.288fc82f3d116b442938c5d5a42cb15c?rik=NvB%2bv0H2JLxmaw&pid=ImgRaw&r=0"
+        "image": "./src/assets/1.webp"
       }
     
     ],
