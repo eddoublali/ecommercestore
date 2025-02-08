@@ -5,7 +5,7 @@ export default function Product({ id, price, image, name }) {
     <div className="">
       <div className="card bg-base-100 w-72 shadow-xl mb-4">
         <figure className="px-10 pt-10">
-          <img src={image||'../assets/2.jpg'} alt={name || "Product"} />
+        <img src={image || '../assets/2.jpg'} alt={name || "Product"} />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name || "Product Name"}</h2>

@@ -1,5 +1,10 @@
 import Product from "./Product";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+import Pagenation from "../components/Pagenation";
+import { useEffect } from "react";
+>>>>>>> 9f43e17bfb21b1eea5d7e3a602541a412225efa7
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../features/productsSlice";
 
@@ -60,11 +65,17 @@ export default function Products() {
         </div>
 
         <div className="grid grid-cols-1 ml-6 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<<<<<<< HEAD
           {currentProducts.map(({ id, price, image, name }) => (
+=======
+          {products?.map(({ id, price, image, name }) => (
+           
+>>>>>>> 9f43e17bfb21b1eea5d7e3a602541a412225efa7
             <Product key={id} price={price} image={image} id={id} name={name} />
           )) || <p>No products found.</p>}
         </div>
       </div>
+<<<<<<< HEAD
 
       <div className="flex items-center justify-center my-5">
         <div className="join flex items-center">
@@ -85,6 +96,9 @@ export default function Products() {
           </button>
         </div>
       </div>
+=======
+<Pagenation/>
+>>>>>>> 9f43e17bfb21b1eea5d7e3a602541a412225efa7
     </>
   );
 }

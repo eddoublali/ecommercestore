@@ -4,7 +4,7 @@ import { getProductinfo } from "../features/productsSlice";
 import Modal from "../components/modle";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import defaultImage from '../assets/2.jpg';
+import defaultImage from '../assets/2.jpg'; // Fallback image
 
 export default function Productinfo() {
   const { id } = useParams();
@@ -32,17 +32,10 @@ export default function Productinfo() {
         quantity,
         totalPrice: product.price * quantity,
         image: product.image,
-      }))
-        .unwrap()
-        .then(() => {
-          setModalMessage("Product added to cart!");
-          setQuantity(1);
-        })
-        .catch(() => {
-          setModalMessage("Failed to add the product to the cart. Please try again.");
-        })
-        .finally(() => setIsModalOpen(true));
-        
+      }));
+      setModalMessage("Product added to cart!");
+      setQuantity(1);
+      setIsModalOpen(true);
     } else {
       setModalMessage("Please enter a valid quantity.");
       setIsModalOpen(true);
@@ -53,25 +46,51 @@ export default function Productinfo() {
     return (
       <div className="flex justify-center items-center h-40">
         <span className="loading loading-spinner loading-lg text-primary" />
+        <p className="ml-4">Loading product details...</p>
       </div>
     );
   }
 
-  if (error) return <p className="text-red-500 text-center">Error: {error}</p>;
-  if (!product) return <p className="text-center">Product not found.</p>;
+  if (error) {
+    return (
+      <p className="text-red-500 text-center">
+        Error: {error}. Please try again later.
+      </p>
+    );
+  }
+
+  if (!product) {
+    return (
+      <p className="text-center">
+        Product not found. Please check the product ID.
+      </p>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 ">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
             <div className="relative h-96 lg:h-[600px] overflow-hidden bg-gray-100">
+<<<<<<< HEAD
             <img
   src={imageError || !product.image ? defaultImage : product.image}
   onError={() => setImageError(true)}
   alt={product.name}
   className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
 />
+=======
+              <img
+                src={product.image || defaultImage} // Use fallback if image is missing
+                onError={(e) => {
+                  e.target.src = defaultImage; // Use fallback if image fails to load
+                  setImageError(true); // Optional: Set error state
+                }}
+                alt={product.name}
+                className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+              />
+>>>>>>> 9f43e17bfb21b1eea5d7e3a602541a412225efa7
             </div>
 
             <div className="p-8 lg:p-12 flex flex-col justify-between">
@@ -92,13 +111,12 @@ export default function Productinfo() {
                 <div className="border-t border-gray-200 pt-6">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
-                    
                       <input
                         type="number"
                         min="1"
                         value={quantity}
                         onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value, 10) || 1))}
-                        className="input input-bordered  text-center w-full"
+                        className="input input-bordered text-center w-full"
                         aria-label="Quantity"
                       />
                     </div>
@@ -106,7 +124,7 @@ export default function Productinfo() {
                     <button
                       onClick={handleAddToCart}
                       disabled={!product.id || !product.price}
-                      className="w-full btn btn-primary btn-lg transform transition-transform duration-200 hover:scale-[1.02]"
+                      className="w-full btn btn-primary btn-lg transform transition-transform duration-200 hover:scale-[1.02] hover:shadow-lg"
                     >
                       Add to Cart
                     </button>
