@@ -1,15 +1,16 @@
 import { useParams } from "react-router";
 import { addToCart } from "../features/cardSlice";
-import { getProductInfo } from "../features/productsSlice";
+import { getProductinfo } from "../features/productsSlice";
 import Modal from "../components/modle";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import defaultImage from '../assets/2.jpg';
 
-export default function ProductInfo() {
+export default function Productinfo() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
   const [imageError, setImageError] = useState(false);
@@ -18,7 +19,7 @@ export default function ProductInfo() {
 
   useEffect(() => {
     if (id && !isNaN(parseInt(id, 10))) {
-      dispatch(getProductInfo(parseInt(id, 10)));
+      dispatch(getProductinfo(parseInt(id, 10)));
     }
   }, [id, dispatch]);
 
@@ -65,12 +66,12 @@ export default function ProductInfo() {
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
             <div className="relative h-96 lg:h-[600px] overflow-hidden bg-gray-100">
-              <img
-                src={imageError ? defaultImage : product.image}
-                onError={() => setImageError(true)}
-                alt={product.name}
-                className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
-              />
+            <img
+  src={imageError || !product.image ? defaultImage : product.image}
+  onError={() => setImageError(true)}
+  alt={product.name}
+  className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+/>
             </div>
 
             <div className="p-8 lg:p-12 flex flex-col justify-between">

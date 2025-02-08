@@ -18,10 +18,9 @@ export const router = createBrowserRouter([
             {
               path: "/",  
               element: <Products />,
-            },
-            {
-              path:"/productinfo/:id",  
-              element: <Productinfo />,
+            },{
+              path: "/Productinfo/:id",  
+              element: <Productinfo />  // This is lowercase 'i'
             }
             ,
             {

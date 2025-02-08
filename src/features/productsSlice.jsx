@@ -13,8 +13,8 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-export const getProductInfo = createAsyncThunk(
-  'products/getProductInfo',
+export const getProductinfo = createAsyncThunk(
+  'products/getProductinfo',
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`http://localhost:3000/products?id=${id}`);
@@ -48,15 +48,15 @@ const productsSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      .addCase(getProductInfo.pending, (state) => {
+      .addCase(getProductinfo.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getProductInfo.fulfilled, (state, action) => {
+      .addCase(getProductinfo.fulfilled, (state, action) => {
         state.loading = false;
         state.product = action.payload;
       })
-      .addCase(getProductInfo.rejected, (state, action) => {
+      .addCase(getProductinfo.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

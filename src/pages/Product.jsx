@@ -12,7 +12,7 @@ export default function Product({ id, price, image, name }) {
           <p className="font-bold text-xl">{price} £</p>
           <div className="card-actions">
             {/* Link navigates to the dynamic route with the product ID */}
-            <Link to={`/productinfo/${id}`} className="btn btn-primary">
+            <Link to={`/Productinfo/${id}`} className="btn btn-primary">
               Buy Now
             </Link>
           </div>
